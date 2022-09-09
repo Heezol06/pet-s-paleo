@@ -7,7 +7,7 @@ import veterinarian from "../../../asset/veterinarian.png"
 
 const HomeTreatment = () => {
   return (
-    <div className="grid lg:grid-cols-2 pr-10 shadow-sm my-5">
+    <div className="grid lg:grid-cols-2 pr-10 shadow-sm mt-5">
       <div className="bg-cover bg-no-repeat hero h-96 w-full  bg-fixed" style={{backgroundImage:`url(${treatment})`}}>
         {/* <img
           className="bg-fixed"

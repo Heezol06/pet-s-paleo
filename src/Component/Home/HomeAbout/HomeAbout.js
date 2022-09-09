@@ -2,7 +2,7 @@ import React from "react";
 
 const HomeAbout = () => {
   return (
-    <div className="grid lg:grid-cols-2 px-10 lg:mt-[400px]">
+    <div className="grid lg:grid-cols-2 px-10 lg:mt-[250px]">
       <div>
         <img
           className="w-[]"
