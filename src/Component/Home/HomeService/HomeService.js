@@ -5,7 +5,7 @@ import Doctor from "../../../asset/veterinary.png";
 
 const HomeService = () => {
   return (
-    <div className="grid lg:grid-cols-3 mx-auto absolute top-[600px] container pb-10">
+    <div className="grid lg:grid-cols-3 mx-auto absolute lg:top-[500px]  container pb-10">
       <div class=" max-h-screen relative bg-white shadow-lg w-80 h-[350px] rounded-lg flex items-center  flex-col hover:bg-[#00bd56] hover:text-white ">
         <div class="absolute -top-10">
           <img
