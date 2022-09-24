@@ -52,7 +52,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end flex justify-evenly">
-      <button className="btn btn-outline text-black">Login</button>
+      <Link to="/login" className="btn btn-outline text-black">Login</Link>
           <img alt="Profile" className="rounded-full w-10" src="https://placeimg.com/80/80/people" />
       </div>
     </div>
