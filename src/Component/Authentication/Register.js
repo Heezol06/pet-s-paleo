@@ -1,10 +1,15 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import facebookLogo from "../../../src/asset/facebook (1).png";
-import githubLogo from "../../../src/asset/github.png";
+import twitterLogo from "../../../src/asset/twitter.png";
 import googleLogo from "../../../src/asset/google.png";
 import bgRegister from "../../../src/asset/job562-nunoon-05-g.jpg";
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSignInWithFacebook,
+  useSignInWithGoogle,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
 import auth from "./Firebase/Firebase.init";
 import { useForm } from "react-hook-form";
 import Loading from "../Loading/Loading";
@@ -12,38 +17,42 @@ import Swal from "sweetalert2";
 
 const Register = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-  const [
-    createUserWithEmailAndPassword,
-    user,
-    loading,
-    userError,
-  ] = useCreateUserWithEmailAndPassword(auth);
+  const [signInWithFacebook, fUser, fLoading, fError] =
+    useSignInWithFacebook(auth);
+  const [createUserWithEmailAndPassword, user, loading, userError] =
+    useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
   let signUpError;
-    
-    if ( loading || gLoading || updating) {
-      return <Loading></Loading>;
-    }
-    if (userError || gError || updateError === "Firebase: Error (auth/user-not-found).") {
-      signUpError = Swal.fire( userError?.message || gError?.message || updateError?.message)
-    }
-    
-    if (user || gUser) {
-      console.log(user || gUser);
-    }
-  const onSubmit = async (data) => {
-console.log(data)
-await createUserWithEmailAndPassword(data.email, data.password);
-await updateProfile({ displayName: data?.name });
-console.log("update done");
-navigate('/')
 
+  if (loading || gLoading || updating || fLoading) {
+    return <Loading></Loading>;
+  }
+  if (
+    userError ||
+    gError ||
+    updateError ||
+    fError === "Firebase: Error (auth/user-not-found)."
+  ) {
+    signUpError = Swal.fire(
+      userError?.message || gError?.message || updateError?.message
+    );
+  }
+
+  if (user || gUser || fUser) {
+    console.log(user || gUser || fUser);
+  }
+  const onSubmit = async (data) => {
+    console.log(data);
+    await createUserWithEmailAndPassword(data.email, data.password);
+    await updateProfile({ displayName: data?.name });
+    console.log("update done");
+    navigate("/");
   };
   if (user) {
     console.log(user);
@@ -108,10 +117,14 @@ navigate('/')
                 />
                 <label className="label">
                   {errors.email?.type === "required" && (
-                    <p role="alert" className="text-red-400 text-start">{errors?.email?.message}</p>
+                    <p role="alert" className="text-red-400 text-start">
+                      {errors?.email?.message}
+                    </p>
                   )}
                   {errors.email?.type === "pattern" && (
-                    <p role="alert" className="text-red-400 text-start">{errors?.email?.message}</p>
+                    <p role="alert" className="text-red-400 text-start">
+                      {errors?.email?.message}
+                    </p>
                   )}
                 </label>
               </div>
@@ -133,21 +146,29 @@ navigate('/')
                     },
                     minLength: {
                       value: 6,
-                      message: 'Must be 6 Characters or longer' 
+                      message: "Must be 6 Characters or longer",
                     },
                   })}
                 />
                 <label className="label">
                   {errors.password?.type === "required" && (
-                    <p role="alert" className="text-red-400 text-start">{errors?.password?.message}</p>
+                    <p role="alert" className="text-red-400 text-start">
+                      {errors?.password?.message}
+                    </p>
                   )}
                   {errors.password?.type === "minLength" && (
-                    <p role="alert" className="text-red-400 text-start">{errors?.password?.message}</p>
+                    <p role="alert" className="text-red-400 text-start">
+                      {errors?.password?.message}
+                    </p>
                   )}
                 </label>
               </div>
               {/* password end  */}
-              <input type="submit" value="REGISTER"  className="w-full px-8 my-5 bg-green-500 rounded-lg py-4 text-white font-semibold"/>
+              <input
+                type="submit"
+                value="REGISTER"
+                className="w-full px-8 my-5 bg-green-500 rounded-lg py-4 text-white font-semibold"
+              />
               <label className="label">
                 <p className="label-text-alt link link-hover text-start">
                   Already Register? <Link to="/login">Login Now!</Link>
@@ -156,11 +177,14 @@ navigate('/')
             </form>
             <div className="divider">OR</div>
             <div className="mt-8">
-              <button className="btn glass btn-circle">
+              <button
+                className="btn glass btn-circle"
+                onClick={() => signInWithFacebook()}
+              >
                 <img className="w-8" src={facebookLogo} alt="" />
               </button>
               <button className="btn glass btn-circle mx-4">
-                <img className="w-8" src={githubLogo} alt="" />
+                <img className="w-8" src={twitterLogo} alt="" />
               </button>
               <button
                 className="btn glass btn-circle"

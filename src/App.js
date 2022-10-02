@@ -10,25 +10,36 @@ import Shop from "./Component/Shop/Shop";
 import Veterinarian from "./Component/Veterinarian/Veterinarian";
 import Gallery from "./Component/Gallery/Gallery";
 import Contact from "./Component/Contact/Contact";
+import DogFood from "./Component/Shop/Food/DogFood";
+import CatFood from "./Component/Shop/Food/CatFood";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 function App() {
+  const queryClient = new QueryClient()
+
   return (
     <div className="App">
+          <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Navbar></Navbar>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
-          <Route path="/shop" element={<Shop />}></Route>
           <Route path="/veterinarian" element={<Veterinarian />}></Route>
           <Route path="/services" element={<Services />}></Route>
           <Route path="/gallery" element={<Gallery />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
-          
+
+          <Route path="/shop" element={<Shop />}>
+
+            <Route path="dogFood" element={<DogFood />} />
+            <Route path="catFood" element={<CatFood />} />
+          </Route>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
+            </QueryClientProvider>
     </div>
   );
 }
