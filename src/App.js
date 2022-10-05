@@ -12,7 +12,11 @@ import Gallery from "./Component/Gallery/Gallery";
 import Contact from "./Component/Contact/Contact";
 import DogFood from "./Component/Shop/Food/DogFood";
 import CatFood from "./Component/Shop/Food/CatFood";
+import AllProducts from "./Component/Shop/AllProducts";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import FishFood from "./Component/Shop/Food/FishFood";
+import BirdFood from "./Component/Shop/Food/BirdFood";
+import About from "./Component/About/About";
 
 function App() {
   const queryClient = new QueryClient()
@@ -27,14 +31,18 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/veterinarian" element={<Veterinarian />}></Route>
+          <Route path="/about" element={<About/>}></Route>
           <Route path="/services" element={<Services />}></Route>
           <Route path="/gallery" element={<Gallery />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
 
           <Route path="/shop" element={<Shop />}>
 
+            <Route index element={<AllProducts />} />
             <Route path="dogFood" element={<DogFood />} />
             <Route path="catFood" element={<CatFood />} />
+            <Route path="fishFood" element={<FishFood />} />
+            <Route path="birdFood" element={<BirdFood />} />
           </Route>
         </Routes>
         <Footer></Footer>
