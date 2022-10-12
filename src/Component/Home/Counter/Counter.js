@@ -1,7 +1,5 @@
 import React from 'react';
 import CountUp from 'react-countup';
-// import counterBg from '../../../asset/pastel-acrylic-abstract-background-vector (1).jpg'
-// style={{backgroundImage:`url(${counterBg})`}}
 import animals from "../../../asset/love-birds.png"
 import pet from "../../../asset/play-with-pet.png"
 import petDoctor from "../../../asset/veterinarian-2.png"
