@@ -1,50 +1,106 @@
 import React from "react";
+import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import dogFood from "../../asset/bone.png"
 import catFood from "../../asset/cat-food.png"
-// import { slide as Menu } from 'react-burger-menu'
+import "./SideNavBar.css";
 
 const Shop = () => {
+  const [isExpanded, setExpendState] = useState(false);
+	const menuItems = [
+		{
+			text: "Dashboard",
+			icon: "icons/grid.svg",
+		},
+		{
+			text: "Admin Profile",
+			icon: "icons/user.svg",
+		},
+		{
+			text: "Messages",
+			icon: "icons/message.svg",
+		},
+		{
+			text: "Analytics",
+			icon: "icons/pie-chart.svg",
+		},
+		{
+			text: "File Manager",
+			icon: "icons/folder.svg",
+		},
+		{
+			text: "Orders",
+			icon: "icons/shopping-cart.svg",
+		},
+		{
+			text: "Saved Items",
+			icon: "icons/heart.svg",
+		},
+		{
+			text: "Settings",
+			icon: "icons/settings.svg",
+		},
+	];
   return (
-    
-
-        <div className="drawer drawer-mobile">
-          <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-          <div className="drawer-content flex flex-col items-center justify-center">
-            {/* <!-- Page content here --> */}
-            <Outlet/>
-            <label
-              htmlFor="my-drawer-2"
-              className="btn btn-primary drawer-button lg:hidden"
-            >
-              Open drawer
-            </label>
-          </div>
-          <div className="drawer-side">
-            <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-            <ul className="menu p-4 overflow-y-auto w-80 bg-slate-100 border-r-2 border-gray-400 text-base-content">
-              {/* <!-- Sidebar content here --> */}
-              <li className="border-b-2">
-                <Link to="/shop"> <img src={dogFood} className="w-8"  alt="" /><p>All Products</p></Link>
-              </li>
-              <li className="border-b-2">
-                <Link to="/shop/dogFood"> <img src={dogFood} className="w-8"  alt="" /><p>Dog Food</p></Link>
-              </li>
-              <li className="border-b-2">
-              <Link to="/shop/catFood"> <img src={catFood} className="w-8" alt="" /><p>Cat Food</p></Link>
-              </li>
-              <li className="border-b-2">
-              <Link to="/shop/fishFood"> <img src={catFood} className="w-8" alt="" /><p>Fish Food</p></Link>
-              </li>
-              <li className="border-b-2">
-              <Link to="/shop/birdFood"> <img src={catFood} className="w-8" alt="" /><p>Bird Food</p></Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      
-      
-    
+    <div>
+      <div
+			className={
+				isExpanded
+					? "side-nav-container"
+					: "side-nav-container side-nav-container-NX"
+			}
+		>
+			<div className="nav-upper">
+				<div className="nav-heading">
+					{isExpanded && (
+						<div className="nav-brand">
+							<img src="icons/Logo.svg" alt="" srcset="" />
+							<h2>Showkart</h2>
+						</div>
+					)}
+					<button
+						className={
+							isExpanded ? "hamburger hamburger-in" : "hamburger hamburger-out"
+						}
+						onClick={() => setExpendState(!isExpanded)}
+					>
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+				<div className="nav-menu">
+					{menuItems.map(({ text, icon }) => (
+						<a
+							className={isExpanded ? "menu-item" : "menu-item menu-item-NX"}
+							href="/"
+						>
+							<img className="menu-item-icon" src={icon} alt="" srcset="" />
+							{isExpanded && <p>{text}</p>}
+						</a>
+					))}
+				</div>
+			</div>
+			<div className="nav-footer">
+				{isExpanded && (
+					<div className="nav-details">
+						<img
+							className="nav-footer-avatar"
+							src="icons/admin-avatar.svg"
+							alt=""
+							srcset=""
+						/>
+						<div className="nav-footer-info">
+							<p className="nav-footer-user-name">M Showkat</p>
+							<p className="nav-footer-user-position">store admin</p>
+						</div>
+					</div>
+				)}
+				<img className="logout-icon" src="icons/logout.svg" alt="" srcset="" />
+			</div>
+		</div>  
+    <Outlet/>
+    </div>  
   );
 };
 
