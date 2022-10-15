@@ -11,7 +11,7 @@ const SideNavBar = () => {
 		},
 		{
 			text: "Admin Profile",
-			icon: "icons/user.svg",
+			icon: "../../../public/icons/user.svg",
 		},
 		{
 			text: "Messages",
