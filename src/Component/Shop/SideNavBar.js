@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import "./SideNavBar.css";
 
 const SideNavBar = () => {
     const [isExpanded, setExpendState] = useState(false);
@@ -50,7 +51,7 @@ const SideNavBar = () => {
 					{isExpanded && (
 						<div className="nav-brand">
 							<img src="icons/Logo.svg" alt="" srcset="" />
-							<h2 className='text-5xl'>Pet-Paleo</h2>
+							<h2 className='text-3xl my-5'>Pet-Paleo</h2>
 						</div>
 					)}
 					<button
