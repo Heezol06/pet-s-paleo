@@ -29,7 +29,7 @@ const About = () => {
       >
         <div>
           <h1 className="text-7xl font-bold text-start py-36 pl-10">
-            Enjoy Your <br /> Holiday
+            Enjoy Your <br /> <span></span>
           </h1>
           <div className="flex items-center ml-10">
             <img src={petSpa} className="w-20 mr-10" alt="" />

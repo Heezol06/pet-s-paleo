@@ -1,9 +1,9 @@
 .side-nav-container {
-	background-color: var(--dark);
+	background-color: black !important;
 	width: 300px;
 	height: 100vh;
 	position: relative;
-	color: var(--light);
+	color: white;
 
 	transition: 0.4s;
 }
