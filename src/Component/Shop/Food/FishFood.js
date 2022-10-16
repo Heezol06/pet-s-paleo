@@ -7,14 +7,15 @@ const FishFood = () => {
         error,
         data: fishFoods,
       } = useQuery(["repoData"], () =>
-        fetch("/FishFoodD.json").then((res) => res.json())
+        fetch("/DogFoodD.json").then((res) => res.json())
       );
       if (isLoading) return "Loading...";
       if (error) return "An error has occurred: " + error.message;
       console.log(fishFoods);
     
     return (
-        <div className="gird grid-cols-2npm">
+        <div className="gird grid-cols-2">
+          <h1 className='text-4xl bg-slate-400'>Dog Food</h1>
       {fishFoods.map((dogFood) => (
         <div className="">
         <div
