@@ -16,8 +16,8 @@ const DogFood = () => {
 
   return (
     <div className=" mx-auto">
-      <h1 className="text-4xl my-10 p-4 bg-slate-300 inline-block">Dog Food</h1>
-      <div className="grid lg:grid-cols-3 gap-10 mx-auto">
+      <h1 className="text-4xl my-10 p-4 bg-slate-300 inline-block rounded-xl">Dog Food</h1>
+      <div className="grid lg:grid-cols-3 gap-10 mx-auto mt-10 mb-20">
         {dogFoods.map((dogFood) => (
           <div className="">
             <div
