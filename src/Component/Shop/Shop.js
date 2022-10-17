@@ -11,7 +11,7 @@ const Shop = () => {
     <div className="flex mt-[64px]">
       <div className="">
         {/* lg device  */}
-        <div class=" bg-amber-100 lg:flex sm:hidden sticky top-8">
+        <div class=" bg-green-100 lg:flex sm:hidden sticky top-8">
           <div class="flex flex-row justify-between">
             <div class="w-72 h-screen">
               <div class="flex items-center justify-start mx-6 mt-10">
