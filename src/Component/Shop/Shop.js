@@ -1,15 +1,41 @@
 import React from "react";
-import {  Link, NavLink, Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import dogFood from "../../asset/bone.png";
-import Catagories from "../../asset/icons/grid (1).png"
-import CatFood from '../../asset/cat-food.png';
-import BirdFood from '../../asset/bird-food.png';
-import FishFood from '../../asset/fish-food.png';
+import Catagories from "../../asset/icons/grid (1).png";
+import CatFood from "../../asset/cat-food.png";
+import BirdFood from "../../asset/bird-food.png";
+import FishFood from "../../asset/fish-food.png";
 
 const Shop = () => {
   return (
     <div className="flex mt-[64px]">
       <div className="">
+        <div className="fixed top-96 right-1 rounded-lg p-3 text-black bg-green-200">
+          <div className="flex flex-col items-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/833/833572.png" className="w-12" alt="" />
+          <label htmlFor="my-modal-6" className="text-4xl modal-button">
+            Item 0
+          </label>
+          <h1 className="bg-white px-5 my-1">৳ 0</h1>
+          </div>
+          <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+          <div className="modal modal-bottom sm:modal-middle">
+            <div className="modal-box">
+              <h3 className="font-bold text-lg">
+                Congratulations random Internet user!
+              </h3>
+              <p className="py-4">
+                You've been selected for a chance to get one year of
+                subscription to use Wikipedia for free!
+              </p>
+              <div className="modal-action">
+                <label htmlFor="my-modal-6" className="btn">
+                  Yay!
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
         {/* lg device  */}
         <div class=" bg-green-100 lg:flex sm:hidden sticky top-8">
           <div class="flex flex-row justify-between">
@@ -21,46 +47,56 @@ const Shop = () => {
                 </span>
               </div>
               <nav class="mt-10 px-6 ">
-                <Link to=""  class=" hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-5  transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-800 dark:text-gray-100 rounded-lg bg-gray-100 dark:bg-gray-600" >
+                <Link
+                  to=""
+                  class=" hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-5  transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-800 dark:text-gray-100 rounded-lg bg-gray-100 dark:bg-gray-600"
+                >
                   <div className="flex">
-                  <img src={dogFood} className="w-8" alt="" />
-                  <span className="mx-4 text-lg font-normal">All Products</span>
+                    <img src={dogFood} className="w-8" alt="" />
+                    <span className="mx-4 text-lg font-normal">
+                      All Products
+                    </span>
                   </div>
                 </Link>
-                <Link to="dogFood"  class=" hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-5  transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-800 dark:text-gray-100 rounded-lg bg-gray-100 dark:bg-gray-600" >
+                <Link
+                  to="dogFood"
+                  class=" hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-5  transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-800 dark:text-gray-100 rounded-lg bg-gray-100 dark:bg-gray-600"
+                >
                   <div className="flex">
-                  <img src={dogFood} className="w-8" alt="" />
-                  <span className="mx-4 text-lg font-normal">Dog Food</span>
+                    <img src={dogFood} className="w-8" alt="" />
+                    <span className="mx-4 text-lg font-normal">Dog Food</span>
                   </div>
                 </Link>
-                <Link to="catFood"
+                <Link
+                  to="catFood"
                   class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2  my-5 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-800 dark:text-gray-100 rounded-lg bg-gray-100 dark:bg-gray-600"
                   href="/"
                 >
                   <div className="flex">
-                  <img src={CatFood} className="w-8" alt="" />
-                  <span class="mx-4 text-lg font-normal">Cat Food</span>
+                    <img src={CatFood} className="w-8" alt="" />
+                    <span class="mx-4 text-lg font-normal">Cat Food</span>
                   </div>
                 </Link>
-                <Link to="birdFood"
+                <Link
+                  to="birdFood"
                   class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2  my-5 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-800 dark:text-gray-100 rounded-lg bg-gray-100 dark:bg-gray-600"
                   href="/"
                 >
                   <div className="flex">
-                  <img src={BirdFood} className="w-8" alt="" />
-                  <span class="mx-4 text-lg font-normal">Bird Food</span>
+                    <img src={BirdFood} className="w-8" alt="" />
+                    <span class="mx-4 text-lg font-normal">Bird Food</span>
                   </div>
                 </Link>
-                <Link to="fishFood"
+                <Link
+                  to="fishFood"
                   class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2  my-5 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-800 dark:text-gray-100 rounded-lg bg-gray-100 dark:bg-gray-600"
                   href="/"
                 >
                   <div className="flex">
-                  <img src={FishFood} className="w-8" alt="" />
-                  <span class="mx-4 text-lg font-normal">Fish Food</span>
+                    <img src={FishFood} className="w-8" alt="" />
+                    <span class="mx-4 text-lg font-normal">Fish Food</span>
                   </div>
                 </Link>
-                
               </nav>
               <div class="absolute bottom-28">
                 <a
@@ -90,35 +126,41 @@ const Shop = () => {
               <img class="h-10 bg-gray-600" src={Catagories} alt="/" />
               <div class="mt-10">
                 <ul className="flex justify-center flex-col items-center">
-                <Link to="dogFood"  class=" hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-5  transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-800 dark:text-gray-100 rounded-lg bg-gray-100 dark:bg-gray-600" >
-                  <div className="flex">
-                  <img src={dogFood} className="w-8" alt="" />
-                  </div>
-                </Link>
-                <Link to="catFood"
-                  class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2  my-5 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-800 dark:text-gray-100 rounded-lg bg-gray-100 dark:bg-gray-600"
-                  href="/"
-                >
-                  <div className="flex">
-                  <img src={CatFood} className="w-8" alt="" />
-                  </div>
-                </Link>
-                <Link to="birdFood"
-                  class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2  my-5 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-800 dark:text-gray-100 rounded-lg bg-gray-100 dark:bg-gray-600"
-                  href="/"
-                >
-                  <div className="flex">
-                  <img src={BirdFood} className="w-8" alt="" />
-                  </div>
-                </Link>
-                <Link to="fishFood"
-                  class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2  my-5 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-800 dark:text-gray-100 rounded-lg bg-gray-100 dark:bg-gray-600"
-                  href="/"
-                >
-                  <div className="flex">
-                  <img src={FishFood} className="w-8" alt="" />
-                  </div>
-                </Link>
+                  <Link
+                    to="dogFood"
+                    class=" hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-5  transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-800 dark:text-gray-100 rounded-lg bg-gray-100 dark:bg-gray-600"
+                  >
+                    <div className="flex">
+                      <img src={dogFood} className="w-8" alt="" />
+                    </div>
+                  </Link>
+                  <Link
+                    to="catFood"
+                    class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2  my-5 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-800 dark:text-gray-100 rounded-lg bg-gray-100 dark:bg-gray-600"
+                    href="/"
+                  >
+                    <div className="flex">
+                      <img src={CatFood} className="w-8" alt="" />
+                    </div>
+                  </Link>
+                  <Link
+                    to="birdFood"
+                    class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2  my-5 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-800 dark:text-gray-100 rounded-lg bg-gray-100 dark:bg-gray-600"
+                    href="/"
+                  >
+                    <div className="flex">
+                      <img src={BirdFood} className="w-8" alt="" />
+                    </div>
+                  </Link>
+                  <Link
+                    to="fishFood"
+                    class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2  my-5 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-800 dark:text-gray-100 rounded-lg bg-gray-100 dark:bg-gray-600"
+                    href="/"
+                  >
+                    <div className="flex">
+                      <img src={FishFood} className="w-8" alt="" />
+                    </div>
+                  </Link>
                 </ul>
               </div>
             </div>
