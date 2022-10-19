@@ -159,7 +159,7 @@ const Veterinarian = () => {
               <div class="bg-white rounded-lg shadow px-8 py-4 pt-24">
                 <div class="text-center">
                   <p class="text-2xl text-gray-800 ">
-                  Lloyd Wilson
+                  Rahman Khan
                   </p>
                   <p class="text-3xl text-green-500 font-light">
                   Health Coach
@@ -189,7 +189,7 @@ const Veterinarian = () => {
               <div class="bg-white rounded-lg shadow px-8 py-4 pt-24 ">
                 <div class="text-center">
                   <p class="text-2xl text-gray-800 ">
-                  Rachel Parker
+                  Rakul Pretty
                   </p>
                   <p class="text-3xl text-green-500 font-light">
                   Life & Business Coach
@@ -219,7 +219,7 @@ const Veterinarian = () => {
               <div class="bg-white rounded-lg shadow px-8 py-4 pt-24">
                 <div class="text-center">
                   <p class="text-2xl text-gray-800 ">
-                  Ian Smith
+                  Stocks
                   </p>
                   <p class="text-3xl text-green-500 font-light">
                   Executive Coach
@@ -259,8 +259,9 @@ const Veterinarian = () => {
                   </p>
                 </div>
                 <div class="pt-8 flex border-t border-gray-200 w-40 mx-auto text-gray-500 items-center justify-between">
-                  <FaFacebookF/>
+                  <a href="/" className="hover:bg-green-300" target="_blank">
                   <AiOutlineTwitter/>
+                  </a>
                   <AiOutlineGoogle/>
                   <AiOutlineInstagram/>
                 </div>
