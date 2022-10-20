@@ -20,16 +20,16 @@ const About = () => {
   return (
     <section>
       <div
-        className="grid lg:grid-cols-2 bg-cover bg-center bg-no-repeat min-h-screen"
+        className="grid lg:grid-cols-2 bg-cover bg-center bg-no-repeat min-h-screen my-[43px]"
         style={{
           backgroundImage:
             "url(http://pawsitive.bold-themes.com/buddy/wp-content/uploads/sites/2/2019/08/background_04.jpg)",
             backgroundSize:"105%"
         }}
       >
-        <div>
-          <h1 className="text-7xl font-bold text-start py-36 pl-10">
-            Enjoy Your <br /> <span></span>
+        <div className="">
+          <h1 className="lg:text-7xl font-bold text-start lg:py-36 pl-10">
+            Enjoy Your <br /> <span className="lg:text-7xl text-orange-400">Holiday</span>
           </h1>
           <div className="flex items-center ml-10">
             <img src={petSpa} className="w-20 mr-10" alt="" />
@@ -214,7 +214,7 @@ const About = () => {
           alt=""
         />
         <div className="lg:flex lg:justify-center mx-auto px-16 py-10 my-10 z-0">
-          <div class="bg-gray-100 p-10 rounded-xl hover:shadow-lg w-[70%] text-start">
+          <div class="bg-gray-100 p-10 rounded-xl hover:shadow-lg lg:w-[70%] text-start">
             <p className="text-orange-600">PET CARE</p>
             <h1 className="text-3xl font-bold my-10">1 Day</h1>
             <img src={home} alt="" className="w-12 mb-5" />
@@ -239,7 +239,7 @@ const About = () => {
             </h1>
           </div>
           <div
-            class="text-white mx-16 p-10 rounded-xl hover:shadow-lg w-[70%] text-start"
+            class="text-white lg:mx-16 lg:my-0 my-5 p-10 rounded-xl hover:shadow-lg lg:w-[70%] text-start"
             style={{
               backgroundImage:
                 "url(http://pawsitive.bold-themes.com/buddy/wp-content/uploads/sites/2/2019/08/price_list_background_02.jpg)",
@@ -269,7 +269,7 @@ const About = () => {
               <CountUp className="text-5xl font-bold" delay={3} end={50} />
             </h1>
           </div>
-          <div class="bg-gray-100 p-10 rounded-xl hover:shadow-lg w-[70%] text-start">
+          <div class="bg-gray-100 p-10 rounded-xl hover:shadow-lg lg:w-[70%] text-start">
             <p className="text-orange-600">PET CARE</p>
             <h1 className="text-3xl font-bold my-10">20 Day</h1>
             <img src={home} alt="" className="w-12 mb-5" />
@@ -336,7 +336,7 @@ const About = () => {
           </div>
         </div>
         {/* Map & Addresses */}
-        <div className="grid lg:grid-cols-2 my-10 py-10 ">
+        <div className="grid lg:grid-cols-2 my-10 py-10">
         <div className="">
             <Location></Location>
           </div>

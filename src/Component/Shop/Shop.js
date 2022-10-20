@@ -15,8 +15,8 @@ const Shop = () => {
           <img src="https://cdn-icons-png.flaticon.com/512/833/833572.png" className="w-12" alt="" />
           <label htmlFor="my-modal-6" className="text-4xl modal-button">
             Item 0
+          <h1 className="bg-white px-5 my-1 text-sm">৳ 0</h1>
           </label>
-          <h1 className="bg-white px-5 my-1">৳ 0</h1>
           </div>
           <input type="checkbox" id="my-modal-6" className="modal-toggle" />
           <div className="modal modal-bottom sm:modal-middle">
