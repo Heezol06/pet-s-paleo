@@ -1,42 +1,51 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import { useState } from 'react';
 
 const AllProducts = () => {
   const {
     isLoading,
     error,
-    data: dogFoods,
+    data: allFoods,
   } = useQuery(["repoData"], () =>
-    fetch("/AllProducts.json").then((res) => res.json())
+  fetch("/AllProducts.json").then((res) => res.json())
   );
+  const [searchResult, setSearchResult] = useState(allFoods)
   if (isLoading) return "Loading...";
   if (error) return "An error has occurred: " + error.message;
-  console.log(dogFoods);
-
+  
+  const handleChange = (e) =>{
+    const searchText = e.target.value;
+    const match = allFoods.filter(v => v.name.includes(searchText) )
+    setSearchResult(match)
+  }
   return (
-    <div className="mx-auto">
-      <h1 className="text-4xl my-10 p-4 bg-green-300 inline-block rounded-xl">All Food</h1>
+    <div className="mx-auto flex flex-col my-[43px]">
+      <div className='flex flex-col bg-green-300 py-5 glass rounded'>
+      <input type="text" placeholder="Type here" onChange={handleChange} className="input input-bordered input-success w-full max-w-xs flex justify-center mx-auto" />
+      <h1 className="text-4xl my-10 p-4 inline-block rounded-xl">All Food</h1>
+      </div>
       <div className="grid lg:grid-cols-3 gap-10 mx-auto mt-10 mb-20">
-        {dogFoods.map((dogFood) => (
+        {searchResult.map((allFood) => (
           <div className="">
             <div
               class="w-full max-w-sm bg-white rounded-lg border hover:shadow-md"
               bis_skin_checked="1"
             >
-              <img class="p-8 rounded-t-lg" src={dogFood.img} alt="product" />
+              <img class="p-8 rounded-t-lg" src={allFood.img} alt="product" />
 
               <div class="px-5 pb-5" bis_skin_checked="1">
                 <h5 class="text-xl font-semibold tracking-tight text-start">
-                  {dogFood.name.slice(0,30)}...
+                  {allFood.name.slice(0,30)}...
                 </h5>
 
                 <div className="flex items-center justify-between">
                 
                   <span class="text-xl font-bold text-gray-900 mt-2.5 mb-5">
-                    Weight: <span className="text-orange-600">{dogFood.weight}</span>
+                    Weight: <span className="text-orange-600">{allFood.weight}</span>
                   </span>
                   <span class="text-xl font-bold text-gray-900 mt-2.5 mb-5">
-                    Price: <span className="text-orange-600">{dogFood.price}</span>
+                    Price: <span className="text-orange-600">{allFood.price}</span>
                   </span>
                 </div>
                 <div
