@@ -17,6 +17,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import FishFood from "./Component/Shop/Food/FishFood";
 import BirdFood from "./Component/Shop/Food/BirdFood";
 import About from "./Component/About/About";
+import RequireAuth from "./Component/RequireAuth/RequireAuth";
 
 function App() {
   const queryClient = new QueryClient()
@@ -36,7 +37,11 @@ function App() {
           <Route path="/gallery" element={<Gallery />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
 
-          <Route path="/shop" element={<Shop />}>
+          <Route path="/shop" element={
+          <RequireAuth>
+            <Shop />
+          </RequireAuth>
+          }>
 
             <Route index element={<AllProducts />} />
             <Route path="dogFood" element={<DogFood />} />
