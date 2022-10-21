@@ -14,16 +14,19 @@ const AllProducts = () => {
   if (isLoading) return "Loading...";
   if (error) return "An error has occurred: " + error.message;
   
-  const handleChange = (e) =>{
+  const handleSearch = (e) =>{
     const searchText = e.target.value;
-    const match = allFoods.filter(v => v.name.includes(searchText) )
-    setSearchResult(match)
+    const lowerSearchTest = searchText.toLowerCase();
+    const match = allFoods.filter(v => v.name.includes(lowerSearchTest))
+    const lowerCaseMatch = match.toLowerCase();
+    setSearchResult(lowerCaseMatch)
   }
   return (
     <div className="mx-auto flex flex-col my-[43px]">
       <div className='flex flex-col bg-green-300 py-5 glass rounded'>
-      <input type="text" placeholder="Type here" onChange={handleChange} className="input input-bordered input-success w-full max-w-xs flex justify-center mx-auto" />
+      <input type="text" placeholder="Type here" onChange={handleSearch} className="input input-bordered input-success w-full max-w-xs flex justify-center mx-auto" />
       <h1 className="text-4xl my-10 p-4 inline-block rounded-xl">All Food</h1>
+        <h1>Food Available : {searchResult.length}</h1>
       </div>
       <div className="grid lg:grid-cols-3 gap-10 mx-auto mt-10 mb-20">
         {searchResult.map((allFood) => (
