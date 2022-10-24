@@ -3,7 +3,7 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../asset/logo.png";
-import auth from "../../Authentication/Firebase/Firebase.init";
+import auth from "../../Authentication/Firebase/firebase.init";
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);

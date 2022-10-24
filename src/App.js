@@ -43,7 +43,11 @@ function App() {
           </RequireAuth>
           }>
 
-            <Route index element={<AllProducts />} />
+            <Route index element={
+              <RequireAuth>
+              <AllProducts />
+            </RequireAuth>
+            } />
             <Route path="dogFood" element={<DogFood />} />
             <Route path="catFood" element={<CatFood />} />
             <Route path="fishFood" element={<FishFood />} />

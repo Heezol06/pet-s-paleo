@@ -10,7 +10,7 @@ import {
   useSignInWithGoogle,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
-import auth from "./Firebase/Firebase.init";
+import auth from "./Firebase/firebase.init";
 import { useForm } from "react-hook-form";
 import Loading from "../Loading/Loading";
 import Swal from "sweetalert2";

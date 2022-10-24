@@ -1,16 +1,21 @@
 import React from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import {Link}  from 'react-router-dom';
+import {Link, useLocation, useNavigate}  from 'react-router-dom';
 import Swal from 'sweetalert2';
 import bgRegister from "../../../src/asset/job562-nunoon-05-g.jpg"
 import facebookLogo from "../../../src/asset/facebook (1).png";
 import twitterLogo from "../../../src/asset/twitter.png";
 import googleLogo from "../../../src/asset/google.png";
 import Loading from '../Loading/Loading';
-import auth from './Firebase/Firebase.init';
+import auth from './Firebase/firebase.init';
 
 const Login = () => {
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const from = location?.state?.from?.pathname || "/"
+
   const [
     signInWithEmailAndPassword,
     user,
@@ -36,8 +41,16 @@ const Login = () => {
   }
 
   const onSubmit = (data) =>{
-console.log(data)
 signInWithEmailAndPassword(data.email, data.password)
+.then(()=>{
+  navigate(from, {replace: true})
+})
+  }
+  const handleGoogleSignIn = () =>{
+    signInWithGoogle()
+    .then(()=>{
+      navigate(from, {replace: true})
+    })
   }
     return (
       <div className="hero min-h-screen bg-base-200" style={{backgroundImage: `url(${bgRegister})`}}>
@@ -113,7 +126,7 @@ signInWithEmailAndPassword(data.email, data.password)
               </div>
               {/* password end  */}
                 <p className="label-text-alt link link-hover text-start">
-                  Haven't any account? <Link to="/register">Login Now!</Link>
+                  Haven't any account? <Link to="/register">Register Now!</Link>
                 </p>
               <input type="submit" value="LOGIN"  className="w-full px-8 my-5 bg-green-500 rounded-lg py-4 text-white font-semibold"/>
               <label className="label">
@@ -132,7 +145,7 @@ signInWithEmailAndPassword(data.email, data.password)
               </button>
               <button
                 className="btn glass btn-circle"
-                onClick={() => signInWithGoogle()}
+                onClick={() => handleGoogleSignIn()}
               >
                 <img className="w-8" src={googleLogo} alt="" />
               </button>
