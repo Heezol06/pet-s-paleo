@@ -52,6 +52,12 @@ signInWithEmailAndPassword(data.email, data.password)
       navigate(from, {replace: true})
     })
   }
+  const handleFacebookSignIn = () =>{
+    signInWithFacebook()
+    .then(()=>{
+      navigate(from, {replace: true})
+    })
+  }
     return (
       <div className="hero min-h-screen bg-base-200" style={{backgroundImage: `url(${bgRegister})`}}>
             <div className='hero-overlay bg-opacity-60'></div>
@@ -136,7 +142,7 @@ signInWithEmailAndPassword(data.email, data.password)
             <div className="mt-8">
               <button
                 className="btn glass btn-circle"
-                onClick={() => signInWithFacebook()}
+                onClick={() => handleFacebookSignIn()}
               >
                 <img className="w-8" src={facebookLogo} alt="" />
               </button>

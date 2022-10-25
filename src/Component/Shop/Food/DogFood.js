@@ -6,19 +6,20 @@ const DogFood = () => {
   const {
     isLoading,
     error,
-    data: dogFoods,
+    data: foods,
   } = useQuery(["repoData"], () =>
-    fetch("/DogFoodD.json").then((res) => res.json())
+    fetch("/AllProducts.json").then((res) => res.json())
   );
   if (isLoading) return "Loading...";
   if (error) return "An error has occurred: " + error.message;
-  console.log(dogFoods);
+  
+  const DogFoods = foods.filter((food) => food.type.includes("Dog Food") )
 
   return (
     <div className="mx-auto">
       <h1 className="text-4xl my-10 p-4 bg-green-300 inline-block rounded-xl">Dog Food</h1>
       <div className="grid lg:grid-cols-3 gap-10 mx-auto mt-10 mb-20">
-        {dogFoods.map((dogFood) => (
+        {DogFoods.map((dogFood) => (
           <div className="">
             <div
               class="w-full max-w-sm bg-white rounded-lg border hover:shadow-md"
