@@ -18,6 +18,7 @@ import FishFood from "./Component/Shop/Food/FishFood";
 import BirdFood from "./Component/Shop/Food/BirdFood";
 import About from "./Component/About/About";
 import RequireAuth from "./Component/RequireAuth/RequireAuth";
+import AddFood from "./Component/AddFood/AddFood";
 
 function App() {
   const queryClient = new QueryClient()
@@ -36,6 +37,7 @@ function App() {
           <Route path="/services" element={<Services />}></Route>
           <Route path="/gallery" element={<Gallery />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/addFood" element={<AddFood />}></Route>
 
           <Route path="/shop" element={
           <RequireAuth>

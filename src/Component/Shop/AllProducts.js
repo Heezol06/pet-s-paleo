@@ -66,7 +66,7 @@ const AllProducts = () => {
                   </span>
                   <span class="text-xl font-bold text-gray-900 mt-2.5 mb-5">
                     Price:{" "}
-                    <span className="text-orange-600">{allFood?.price}</span>
+                    <span className="text-orange-600">৳{allFood?.price}</span>
                   </span>
                 </div>
                 <div
