@@ -6,11 +6,10 @@ const ManageAllFood = () => {
   const {
     isLoading,
     error,
-    data: allFoods,
+    data: allFoods, refetch
   } = useQuery(["repoData"], () =>
     fetch("http://localhost:5000/allFood").then((res) => res.json())
   );
-
   const handleFoodItemDelete = id =>{
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
@@ -41,7 +40,10 @@ const ManageAllFood = () => {
         })
         .then(res => res.json())
         .then(data => {
-console.log(data);
+        if (data) {
+          refetch()
+        }
+          
         })
         
       } else if (
@@ -57,7 +59,7 @@ console.log(data);
     })
   }
   return (
-    <div className="my-20 flex flex-col xs:block">
+    <div className="my-20 hidden lg:block max-w-screen-xl px-4 sm:px-4 md:px-6 mx-auto">
       <h1 className="text-5xl my-10 underline text-green-600">From Here Your Can Manage All Foods.</h1>
       <div className="overflow-x-auto w-full">
         <table className="table w-full ">

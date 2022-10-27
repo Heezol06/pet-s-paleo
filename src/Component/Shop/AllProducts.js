@@ -9,7 +9,7 @@ const AllProducts = () => {
     isLoading,
     error,
     data: allFoods,
-  } = useQuery(["repoData"], () =>
+  } = useQuery(["allFood"], () =>
     fetch("http://localhost:5000/allFood").then((res) => res.json())
   );
   const [searchResult, setSearchResult] = useState(allFoods);

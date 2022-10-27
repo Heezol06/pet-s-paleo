@@ -3,6 +3,7 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../asset/logo.png";
+import userAvatar from "../../../asset/icons/user.png"
 import auth from "../../Authentication/Firebase/firebase.init";
 
 const Navbar = () => {
@@ -129,7 +130,7 @@ const Navbar = () => {
         <img
           alt="Profile"
           className="rounded-full w-10"
-          src="https://placeimg.com/80/80/people"
+          src={user?.photoURL ? user.photoURL : userAvatar} 
         />
       </div>
     </div>
