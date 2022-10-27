@@ -7,10 +7,10 @@ e.preventDefault()
 const name = e.target.name.value;
 const type = e.target.type.value;
 const weight = e.target.weight.value;
-const url = e.target.url.value;
+const img = e.target.img.value;
 const price = e.target.price.value;
 
-const food = {name, type, weight,url,price}
+const food = {name, type, weight,img,price}
 
 
 // send data to server 
@@ -83,7 +83,7 @@ fetch("http://localhost:5000/addFood",{
             <input
               type="text"
               className="input input-bordered  "
-              name="url"
+              name="img"
               placeholder="Foods image url"
               required
             />

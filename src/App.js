@@ -19,6 +19,7 @@ import BirdFood from "./Component/Shop/Food/BirdFood";
 import About from "./Component/About/About";
 import RequireAuth from "./Component/RequireAuth/RequireAuth";
 import AddFood from "./Component/AddFood/AddFood";
+import ManageAllFood from "./Component/ManageAllFood/ManageAllFood";
 
 function App() {
   const queryClient = new QueryClient()
@@ -38,6 +39,7 @@ function App() {
           <Route path="/gallery" element={<Gallery />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/addFood" element={<AddFood />}></Route>
+          <Route path="/manageAllFood" element={<ManageAllFood />}></Route>
 
           <Route path="/shop" element={
           <RequireAuth>
