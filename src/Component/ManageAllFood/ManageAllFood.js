@@ -31,11 +31,19 @@ const ManageAllFood = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         swalWithBootstrapButtons.fire(
-          id,
           'Deleted!',
           'This food item is deleted.',
           'success'
         )
+        const url = `http://localhost:5000/allFood/${id}`  
+        fetch(url,{
+          method:'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => {
+console.log(data);
+        })
+        
       } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel
