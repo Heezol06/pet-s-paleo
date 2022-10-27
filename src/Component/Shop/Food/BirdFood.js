@@ -7,7 +7,7 @@ const BirdFood = () => {
     error,
     data: foods,
   } = useQuery(["repoData"], () =>
-    fetch("/AllProducts.json").then((res) => res.json())
+    fetch("http://localhost:5000/allFood").then((res) => res.json())
   );
   if (isLoading) return "Loading...";
   if (error) return "An error has occurred: " + error.message;

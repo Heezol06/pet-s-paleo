@@ -1,4 +1,5 @@
 import React from "react";
+import Swal from "sweetalert2";
 import bgImage from "../../asset/flat-lay-toys-with-food-bowl-fur-brush-dogs.jpg";
 const AddFood = () => {
     const handleAddFood = (e) =>{
@@ -11,7 +12,25 @@ const price = e.target.price.value;
 
 const food = {name, type, weight,url,price}
 
-    }
+
+// send data to server 
+fetch("http://localhost:5000/addFood",{
+    method:"POST",
+    headers:{
+        "Content-Type": 'application/json'
+    },
+    body: JSON.stringify(food)
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+    Swal.fire(
+      'Good job!',
+      'Server Received Foods Date'
+      )
+        e.target.reset()
+    })
+  }
   return (
     <div className="">
       <div
@@ -81,6 +100,7 @@ const food = {name, type, weight,url,price}
               required
             />
           </div>
+          <input type="submit" value="ADD"  className="w-full px-8 my-5 bg-green-500 rounded-lg py-4 text-white font-semibold"/>
           </div>
         </form>
       </div>

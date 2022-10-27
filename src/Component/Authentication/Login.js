@@ -58,8 +58,9 @@ signInWithEmailAndPassword(data.email, data.password)
       navigate(from, {replace: true})
     })
   }
+  
     return (
-      <div className="hero min-h-screen bg-base-200" style={{backgroundImage: `url(${bgRegister})`}}>
+      <div className="hero min-h-screen bg-base-200 my-20" style={{backgroundImage: `url(${bgRegister})`}}>
             <div className='hero-overlay bg-opacity-60'></div>
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left text-white">

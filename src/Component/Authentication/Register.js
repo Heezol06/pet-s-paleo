@@ -59,7 +59,7 @@ const Register = () => {
   }
   return (
     <div
-      className="hero min-h-screen bg-base-200"
+      className="hero min-h-screen my-20 bg-base-200"
       style={{ backgroundImage: `url(${bgRegister})` }}
     >
       <div className="hero-overlay bg-opacity-60"></div>

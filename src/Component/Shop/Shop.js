@@ -37,7 +37,7 @@ const Shop = () => {
           </div>
         </div>
         {/* lg device  */}
-        <div class=" bg-green-100 lg:flex sm:hidden sticky top-8">
+        <div class=" bg-green-100 lg:flex hidden sticky top-8">
           <div class="flex flex-row justify-between">
             <div class="w-72 h-screen">
               <div class="flex items-center justify-start mx-6 mt-10">
@@ -120,7 +120,7 @@ const Shop = () => {
           </div>
         </div>
         {/* sm device  */}
-        <div class="flex flex-row h-full lg:hidden sticky top-8">
+        <div class="flex flex-row h-full lg:hidden sticky lg:top-8">
           <nav class="bg-green-100 w-20 h-screen justify-between flex flex-col">
             <div class="mt-10 mb-10 flex justify-center flex-col items-center">
               <img class="h-10 bg-gray-600" src={Catagories} alt="/" />
