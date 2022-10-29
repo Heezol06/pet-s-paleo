@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const ManageAllFood = () => {
@@ -103,7 +104,7 @@ const ManageAllFood = () => {
               <td className="text-orange-500">{allFood.price}</td>
               <td className="text-green-500">{allFood.weight}</td>
               <th>
-                <button className="btn btn-ghost btn-xs bg-green-300 mr-5">Edit</button>
+                <Link to={`/editFood/${allFood._id}`}><button className="btn btn-ghost btn-xs bg-green-300 mr-5">Edit</button></Link>
                 <button className="btn btn-ghost bg-orange-500 btn-xs" onClick={()=>handleFoodItemDelete(allFood._id)}>Delete</button>
               </th>
             </tr>

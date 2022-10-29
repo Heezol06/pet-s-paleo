@@ -20,6 +20,7 @@ import About from "./Component/About/About";
 import RequireAuth from "./Component/RequireAuth/RequireAuth";
 import AddFood from "./Component/AddFood/AddFood";
 import ManageAllFood from "./Component/ManageAllFood/ManageAllFood";
+import EditFood from "./Component/EditFood/EditFood";
 
 function App() {
   const queryClient = new QueryClient()
@@ -40,6 +41,7 @@ function App() {
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/addFood" element={<AddFood />}></Route>
           <Route path="/manageAllFood" element={<ManageAllFood />}></Route>
+          <Route path="/editFood/:id" element={<EditFood />}></Route>
 
           <Route path="/shop" element={
           <RequireAuth>
