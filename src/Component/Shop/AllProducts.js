@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const AllProducts = () => {
   const navigate = useNavigate();
@@ -25,7 +25,11 @@ const AllProducts = () => {
   // };
   const getProductsDetails = (id) => {
     // navigate(`/purchase/${id}`);
-    console.log(id)
+  console.log(id)
+  const url = `http://localhost:5000/allFood/${id}`
+  fetch(url)
+  .then(res => res.json())
+  .then(data =>data )
   };
   return (
     <div className="mx-auto flex flex-col my-[43px]">
@@ -46,14 +50,14 @@ const AllProducts = () => {
               class="w-full max-w-sm bg-white rounded-lg border hover:shadow-md"
               bis_skin_checked="1"
             >
-              <button onClick={() => getProductsDetails(allFood?._id)}>
+            <Link to={`/singleProducts/${allFood._id}`}>  <button onClick={() => getProductsDetails(allFood?._id)}>
                 <img
                   class="p-8 rounded-t-lg"
                   src={allFood?.img}
                   alt="product"
                 />
               </button>
-
+</Link>
               <div class="px-5 pb-5" bis_skin_checked="1">
                 <h5 class="text-xl font-semibold tracking-tight text-start">
                   {allFood?.name.slice(0, 30)}...
