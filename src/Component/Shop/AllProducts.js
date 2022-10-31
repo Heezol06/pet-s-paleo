@@ -58,7 +58,7 @@ const AllProducts = () => {
                 />
               </button>
 </Link>
-              <div class="px-5 pb-5" bis_skin_checked="1">
+              <div class="px-5" bis_skin_checked="1">
                 <h5 class="text-xl font-semibold tracking-tight text-start">
                   {allFood?.name.slice(0, 30)}...
                 </h5>
@@ -152,6 +152,7 @@ const AllProducts = () => {
                   </button>
                 </div>
               </div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#bbf7d0" fill-opacity="1" d="M0,288L720,128L1440,32L1440,320L720,320L0,320Z"></path></svg>
             </div>
           </div>
         ))}

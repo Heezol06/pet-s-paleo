@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const SingleProduct = () => {
   const [food, setFood] = useState({});
@@ -33,7 +33,7 @@ const SingleProduct = () => {
           </div>
           <div className="my-10">
           <button className="btn btn-outline btn-success mr-5">Add To Card</button>
-          <button className="btn btn-outline btn-error">Buy Now</button>
+          <Link to={`/payment/${food._id}`}><button className="btn btn-outline btn-error">Buy Now</button></Link>
           </div>
         </div>
       </div>
