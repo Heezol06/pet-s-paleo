@@ -14,7 +14,7 @@ const SingleProduct = () => {
   }, []);
   return (
     <div className="m-20 shadow-xl">
-      <div className="lg:grid lg:grid-cols-3 px-10 pt-10">
+      <div className="lg:grid lg:grid-cols-2 px-10 pt-10">
         <div>
           <img src={food.img} className="w-[50%] border" alt="" />
         </div>
