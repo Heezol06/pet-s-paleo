@@ -1,0 +1,8 @@
+*1. install stripe react stripe js
+2. login stripe on stripe website
+3. get publishable key pk
+4. create elements wrapper using publishable key
+5. create checkout from  using card element, useStripe, useElements
+6. get card element info
+---------
+7. get credit card info/error
