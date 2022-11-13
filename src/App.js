@@ -23,6 +23,8 @@ import ManageAllFood from "./Component/ManageAllFood/ManageAllFood";
 import EditFood from "./Component/EditFood/EditFood";
 import SingleProduct from "./Component/SingleProduct/SingleProduct";
 import Payment from "./Component/Payment/Payment";
+import CartPage from "./Component/CartPage/CartPage";
+import AddToCart from "./Component/AddToCart/AddToCart";
 
 function App() {
   const queryClient = new QueryClient()
@@ -44,6 +46,7 @@ function App() {
           <Route path="/addFood" element={<AddFood />}></Route>
           <Route path="/manageAllFood" element={<ManageAllFood />}></Route>
           <Route path="/payment/:id" element={<Payment />}></Route>
+          <Route path="/CartPage/:id" element={<AddToCart />}></Route>
           <Route path="/editFood/:id" element={<EditFood />}></Route>
           <Route path="/singleProducts/:id" element={<SingleProduct />}></Route>
 

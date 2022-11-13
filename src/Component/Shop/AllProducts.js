@@ -25,12 +25,23 @@ const AllProducts = () => {
   // };
   const getProductsDetails = (id) => {
     // navigate(`/purchase/${id}`);
-  console.log(id)
-  const url = `http://localhost:5000/allFood/${id}`
-  fetch(url)
-  .then(res => res.json())
-  .then(data =>data )
-  };
+    console.log(id);
+    const url = `http://localhost:5000/allFood/${id}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => data);
+    };
+    const addToCart = (id) =>{
+      const url = `http://localhost:5000/addToCart/${id}`
+      fetch(url,{
+      method:"POST",
+    headers:{
+        "Content-Type": 'application/json'
+    }})
+      .then((res)=>res.json())
+      .then((data)=> data)
+    }
+    console.log(allFoods);
   return (
     <div className="mx-auto flex flex-col my-[43px]">
       <div className="flex flex-col bg-green-300 py-5 glass rounded">
@@ -50,14 +61,16 @@ const AllProducts = () => {
               class="w-full max-w-sm bg-white rounded-lg border hover:shadow-md"
               bis_skin_checked="1"
             >
-            <Link to={`/singleProducts/${allFood._id}`}>  <button onClick={() => getProductsDetails(allFood?._id)}>
-                <img
-                  class="p-8 rounded-t-lg"
-                  src={allFood?.img}
-                  alt="product"
-                />
-              </button>
-</Link>
+              <Link to={`/singleProducts/${allFood._id}`}>
+                {" "}
+                <button onClick={() => getProductsDetails(allFood?._id)}>
+                  <img
+                    class="p-8 rounded-t-lg"
+                    src="https://st4.depositphotos.com/19960896/30701/i/450/depositphotos_307013996-stock-photo-ambrosia-panchamrit-panchamrut-panchamrutham-panchamrutha.jpg"
+                    alt="product"
+                  />
+                </button>
+              </Link>
               <div class="px-5" bis_skin_checked="1">
                 <h5 class="text-xl font-semibold tracking-tight text-start">
                   {allFood?.name.slice(0, 30)}...
@@ -138,6 +151,7 @@ const AllProducts = () => {
                   <button
                     type="button"
                     class="w-10 h-10 text-base font-medium rounded-full text-white bg-green-500 hover:bg-green-700"
+                    onClick={()=>addToCart(allFood?._id)}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -152,7 +166,13 @@ const AllProducts = () => {
                   </button>
                 </div>
               </div>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#bbf7d0" fill-opacity="1" d="M0,288L720,128L1440,32L1440,320L720,320L0,320Z"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path
+                  fill="#bbf7d0"
+                  fill-opacity="1"
+                  d="M0,288L720,128L1440,32L1440,320L720,320L0,320Z"
+                ></path>
+              </svg>
             </div>
           </div>
         ))}
