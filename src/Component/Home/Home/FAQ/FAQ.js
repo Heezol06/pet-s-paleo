@@ -1,7 +1,7 @@
 import React from "react";
-import ReactPlayer from 'react-player'
 import trainingImg from "../../../../asset/photo-1541888050297-a615ca315e96.jpeg"
-import trainingImg2 from "../../../../asset/photo-1546815708-410983510897.jpeg"
+import trainingImg2 from "../../../../asset/humberto-arellano-N_G2Sqdy9QY-unsplash.jpg"
+import trainingImg3 from "../../../../asset/photo-1546815708-410983510897.jpeg"
 
 const FAQ = () => {
   return (
@@ -80,8 +80,8 @@ const FAQ = () => {
 
       {/* faq image start*/}
       <div className="lg:ml-24">
-        <div className="w-[200px] m-[20px]">
-        <ReactPlayer url='https://www.youtube.com/watch?v=07d2dXHYb94'  className="w-[50px]" />
+        <div className="lg:w-[545px]  ">
+        <img src={trainingImg3} className="h-full" alt="" />
         </div>
         <div className="grid grid-cols-9 mx-auto">
             <img src={trainingImg} className="h-full col-span-5" alt="" />

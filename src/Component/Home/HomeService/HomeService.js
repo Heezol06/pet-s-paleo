@@ -6,7 +6,7 @@ import Doctor from "../../../asset/veterinary.png";
 const HomeService = () => {
   return (
     <div className="block lg:flex justify-center pb-10 mt-[-80px]">
-      <div class="max-h-screen mx-auto relative bg-white shadow-lg w-80 h-[350px] rounded-lg flex items-center  flex-col hover:bg-[#00bd56] hover:text-white ">
+      <div class=" h-[350px] mx-auto relative bg-white shadow-lg w-80 rounded-lg flex items-center  flex-col hover:bg-[#00bd56] hover:text-white ">
         <div class="absolute -top-10">
           <img
             class=" h-24 w-24 rounded-3xl object-cover "
@@ -28,7 +28,7 @@ const HomeService = () => {
         </div>
         <div class=" flex flex-row space-x-4 mt-11"></div>
       </div>
-      <div class="lg:mx-24 max-h-screen mx-auto my-16 relative bg-white shadow-lg w-80 h-[350px] rounded-lg flex items-center  flex-col hover:bg-[#00bd56] hover:text-white ">
+      <div class="lg:mx-24 mx-auto my-16 relative bg-white shadow-lg w-80 h-[350px] rounded-lg flex items-center  flex-col hover:bg-[#00bd56] hover:text-white ">
         <div class="absolute -top-10">
           <img
             class=" h-24 w-24 rounded-3xl object-cover "
@@ -50,7 +50,7 @@ const HomeService = () => {
         </div>
         <div class=" flex flex-row space-x-4 mt-11"></div>
       </div>
-      <div class="max-h-screen mx-auto relative bg-white shadow-lg w-80 h-[350px] rounded-lg flex items-center  flex-col hover:bg-[#00bd56] hover:text-white ">
+      <div class=" mx-auto relative bg-white shadow-lg w-80 h-[350px] rounded-lg flex items-center  flex-col hover:bg-[#00bd56] hover:text-white ">
         <div class="absolute -top-10">
           <img
             class=" h-24 w-24 rounded-3xl object-cover "

@@ -7,7 +7,7 @@ const Packages = () => {
         Affordable Packages
         </h1>
         <div className="lg:flex justify-between mx-auto">
-      <div className="lg:w-[400px] lg:h-[800px] w-[300px] my-10 rounded-lg bg-white hover:shadow-lg lg:mx-10">
+      <div className="lg:w-[400px] lg:h-[550px] w-[300px] my-10 rounded-lg bg-white hover:shadow-lg lg:mx-10">
         <img
           src="https://preview.colorlib.com/theme/petsitting/images/xpricing-1.jpg.pagespeed.ic.inpf6q4jh2.jpg"
           className="rounded-lg"
@@ -32,7 +32,7 @@ const Packages = () => {
         </div>
         <button className="px-10 my-10 bg-green-500 rounded-sm py-5 text-white font-semibold">GET STARTED</button>
       </div>
-      <div className="lg:w-[400px] lg:h-[800px] w-[300px] my-10 rounded-lg bg-white hover:shadow-lg">
+      <div className="lg:w-[400px] lg:h-[550px] w-[300px] my-10 rounded-lg bg-white hover:shadow-lg">
         <img
           src="https://preview.colorlib.com/theme/petsitting/images/xpricing-2.jpg.pagespeed.ic.G6n7viuHPT.jpg"
           className="rounded-lg"
@@ -57,7 +57,7 @@ const Packages = () => {
         </div>
         <button className="px-10 my-10 bg-green-500 rounded-sm py-5 text-white font-semibold">GET STARTED</button>
       </div>
-      <div className="lg:w-[400px] lg:h-[800px] w-[300px] my-10 rounded-lg bg-white hover:shadow-lg">
+      <div className="lg:w-[400px] lg:h-[550px] w-[300px] my-10 rounded-lg bg-white hover:shadow-lg">
         <img
           src="https://preview.colorlib.com/theme/petsitting/images/xpricing-3.jpg.pagespeed.ic.LnFoKD0RKv.jpg"
           className="rounded-lg"

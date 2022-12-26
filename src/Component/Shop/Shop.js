@@ -13,10 +13,10 @@ const Shop = () => {
         <div className="fixed top-96 right-1 rounded-lg p-3 text-black bg-green-200">
           <div className="flex flex-col items-center">
           <img src="https://cdn-icons-png.flaticon.com/512/833/833572.png" className="w-12" alt="" />
-          <label htmlFor="my-modal-6" className="text-4xl modal-button">
+          <Link to="/addToCart" htmlFor="my-modal-6" className="text-4xl modal-button">
             Item 0
           <h1 className="bg-white px-5 my-1 text-sm">৳ 0</h1>
-          </label>
+          </Link>
           </div>
           <input type="checkbox" id="my-modal-6" className="modal-toggle" />
           <div className="modal modal-bottom sm:modal-middle">

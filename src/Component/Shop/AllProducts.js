@@ -32,6 +32,8 @@ const AllProducts = () => {
       .then((data) => data);
     };
     const addToCart = (id) =>{
+      // const {id:_id, name:name } = allFoods
+      // console.log(id, name);
       const url = `http://localhost:5000/addToCart/${id}`
       fetch(url,{
       method:"POST",
@@ -61,7 +63,7 @@ const AllProducts = () => {
               class="w-full max-w-sm bg-white rounded-lg border hover:shadow-md"
               bis_skin_checked="1"
             >
-              <Link to={`/singleProducts/${allFood._id}`}>
+              <Link to={`/singleProducts/${allFood?._id}`}>
                 {" "}
                 <button onClick={() => getProductsDetails(allFood?._id)}>
                   <img
